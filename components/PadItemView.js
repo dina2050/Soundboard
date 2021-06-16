@@ -22,9 +22,11 @@ console.log("paditemview", route.params)
                 navigation.navigate('LibraryView', route.params)
             }}
         >
-            <Text>Choose from local library</Text>
+            <Text style={{color:"blue", fontSize:20}}>Choose from local library</Text>
 
         </TouchableOpacity>
+
+            <Text style={{textAlign:'center', fontSize:40}}>Record a new sample</Text>
             <RecordAudio propFromPadItemView={route.params} />
             <SearchFreesound dataFromPadItemView={route.params}/>
     </View>

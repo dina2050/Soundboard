@@ -24,12 +24,14 @@ const LibraryView = ({ route }) => {
     };
 
     const changeTheId = (id) => {
-        dispatch(changeSource({id:route.params.id, sampleId:id}));
-        console.log(dispatch(changeSource({id:route.params.id, sampleId:id})))
+        if(route.params.id){
+            dispatch(changeSource({id:route.params.id, sampleId:id}));
+        }
     };
             return (
                 <View style={{marginTop:20}}>
                 <View>
+                    <Text style={{textAlign:'center', fontSize:40}}>Add a new sample</Text>
                         <TextInput
                             type='text'
                             name='name'
@@ -52,8 +54,8 @@ const LibraryView = ({ route }) => {
                             onChangeText={setUrl}
                             placeholder="Enter sample url"
                         />
-                        <Button title="submit" type="submit"  value="Submit" onPress={handlePress}>
-                            Add a sample
+                        <Button title="Add" type="submit"  value="Submit" onPress={handlePress} >
+                            Add
                         </Button>
                     </View>
 

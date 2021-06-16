@@ -35,7 +35,7 @@ const SearchFreesound = ({dataFromPadItemView}) => {
     return (
 
         <View style={{marginTop:20}}>
-            <Text >Movies</Text>
+
             <View>
                     <TextInput
                         style={{marginRight:15}}
@@ -43,7 +43,7 @@ const SearchFreesound = ({dataFromPadItemView}) => {
                         name='search'
                         value={search}
                         onChangeText={(event) => updateSearch(event)}
-                        placeholder='title'
+                        placeholder='search'
                     />
                 <Button title="search" type="submit"  value="Submit" onPress={handleSubmit}>
                     Search

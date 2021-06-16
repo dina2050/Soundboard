@@ -53,13 +53,7 @@ const RecordAudio = ({propFromPadItemView}) => {
             }
         })
     })
- /*   const addToTheCurrentPad = () => {
-        library.map(sound => {
-            if(sound.name === name){
-                dispatch(changeSource({id:propFromPadItemView.id, sampleId:sound.id}));
-            }
-        })
-    }*/
+
     return (
         <View style={{marginTop:20}}>
             <Button
@@ -80,7 +74,7 @@ const RecordAudio = ({propFromPadItemView}) => {
                 onChangeText={setDescription}
                 placeholder="Enter a description for recorded sound"
             />
-            <Button title="submit" type="submit"  value="Submit" onPress={handlePress}>
+            <Button title="Add recorded sound" type="submit"  value="Submit" onPress={handlePress}>
                 Add to the Library
             </Button>
         </View>

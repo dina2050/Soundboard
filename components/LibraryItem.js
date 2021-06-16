@@ -19,9 +19,8 @@ const LibraryItem = ({ name, type, url, crop, id }) => {
         >
             <Text>
                 {name}
-                type: {type}
-
             </Text>
+            <Text> type: {type}</Text>
             <Button title="X" onPress={remove} />
         </View>
     );

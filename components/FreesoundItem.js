@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from "react";
-import {Image, Text, TouchableOpacity, View} from "react-native";
+import {Button, Image, Text, TouchableOpacity, View} from "react-native";
 import * as FileSystem from "expo-file-system";
 import {addSample, librarySelector} from "../library/librarySlice";
 import {useDispatch, useSelector} from "react-redux";
