@@ -1,21 +1,33 @@
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React, { Component } from 'react';
+import { Provider } from 'react-redux'
+import store from "./store/store"
+import {NavigationContainer} from "@react-navigation/native";
+import {createBottomTabNavigator} from "@react-navigation/bottom-tabs";
+import PadItems, { Samples} from "./components/PadItems";
+import persistStore from "redux-persist/es/persistStore";
+import { PersistGate } from "redux-persist/integration/react";
+import PadItem from "./components/PadItem";
+import PadItemView from "./components/PadItemView";
+import LibraryView from "./components/LibraryView";
 
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
+
+const Tab = createBottomTabNavigator();
+let persistor = persistStore(store);
+const App = () => {
+        return (
+            <Provider store={store}>
+                <PersistGate persistor={persistor}>
+                    <NavigationContainer>
+                        <Tab.Navigator>
+                        <Tab.Screen name="PadItems" component={PadItems} />
+                        <Tab.Screen name="PadItemView" component={PadItemView} />
+                        <Tab.Screen name="LibraryView" component={LibraryView} />
+                            </Tab.Navigator>
+                    </NavigationContainer>
+                </PersistGate>
+            </Provider>
+        );
+
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+export default App;
