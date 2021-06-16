@@ -1,4 +1,4 @@
-# Mystic tarot
+# Soundboard
 
 ### _Introduction_
 
@@ -21,11 +21,11 @@ There is also another view(LibraryView) where you can simply add new samples to 
 
 
 
-![](images/editview.png)
+![](assets/editview.png)
 
 
 
-![](images/library.png)
+![](assets/library.png)
 
 
 
